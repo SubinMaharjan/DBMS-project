@@ -134,6 +134,61 @@ INSERT INTO `education` VALUES (1,'High School'),(2,'Bachelor\'s'),(3,'Master\'s
 UNLOCK TABLES;
 
 --
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `login` (
+  `LoginID` int NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `UserType` int NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  PRIMARY KEY (`LoginID`),
+  UNIQUE KEY `UserName_UNIQUE` (`UserName`),
+  UNIQUE KEY `Email_UNIQUE` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES (2,'abc','1234',1,'Abc'),(3,'abcd','12345',2,'xyz'),(4,'anand','1234567',1,'alm'),(5,'afd@608','adfaf',2,'dasf@d.com'),(6,'first@943','dshfdg',2,'asdfad@hgd.cpm'),(7,'fadgfa@4','fgadsf',1,'sfda@ersr'),(8,'anand@243','anand@123',1,'anandhero@gmail.com'),(9,'abc@717','ddsfad',1,'adfa@dfa'),(10,'adsf@582','afadsf',1,'da@dfa'),(11,'fdad@168','5435242',1,'fadf@aef');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usertype`
+--
+
+DROP TABLE IF EXISTS `usertype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usertype` (
+  `UserTypeID` int NOT NULL AUTO_INCREMENT,
+  `UserType` varchar(10) NOT NULL,
+  PRIMARY KEY (`UserTypeID`),
+  UNIQUE KEY `UserTypeID_UNIQUE` (`UserTypeID`),
+  UNIQUE KEY `UserType_UNIQUE` (`UserType`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usertype`
+--
+
+LOCK TABLES `usertype` WRITE;
+/*!40000 ALTER TABLE `usertype` DISABLE KEYS */;
+INSERT INTO `usertype` VALUES (2,'Candidate'),(1,'Voter');
+/*!40000 ALTER TABLE `usertype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `vote`
 --
 
@@ -208,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-15 20:05:14
+-- Dump completed on 2021-07-19 11:33:53
