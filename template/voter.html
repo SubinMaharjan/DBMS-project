@@ -5,19 +5,30 @@
     <h1>Welcome to Nep Election</h1>
     <h3>You can now vote your favorite candidate in your area.</h3>
 
-    <p>Time remaining to vote : %d%d%d {{time}}</p>
+    <p>Time remaining to vote : {{time}}</p>
 </div>
-{%for data in datas%}
-<div class="candidate">
-    <h1>{{data['FirstName'] + ' ' + data['MiddleName'] + ' ' + data['LastName']}}</h1>
-    <h2>{{data['DegreeLevel']}}</h2>
-    <p>Summary of vision of the candidate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil veniam facilis esse odio explicabo at neque cumque magni blanditiis saepe, sapiente molestiae quaerat eum, alias nostrum! Ab quo et vel.</p>
-    <form method="post">
-        <input type="Submit" name="submit" value="Submit your vote">
-    </form>
 
-</div>
-{%endfor%} {%endblock%}
+<table style="width:100%">
+    <tr>
+        <th>Candidate Name</th>
+        <th>Candidate Education</th>
+        <th>Candidate Party</th>
+        <th>Click to Vote</th>
+    </tr>
+    {%for data in datas%}
+    <tr>
+        <th scope="row">{{data['FirstName'] + ' ' + data['MiddleName'] + ' ' + data['LastName']}}</th>
+        <td>{{data['DegreeLevel']}}</td>
+        <td>{{data['PartyID']}}</td>
+
+        <td>
+            <a href="{{url_for('Voted', username = username, CandidateID = data['CandidateID'])}}"><input type="Submit" name="" value="Vote"></a>
+        </td>
+    </tr>
+    {%endfor%}
+
+</table>
+{%endblock%}
 
 <!-- <div class="candidate">
         <h1>Candidate Name</h1>

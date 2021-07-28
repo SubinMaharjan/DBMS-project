@@ -27,7 +27,7 @@
         <ul>
             <li><a class="{{'active' if active_page == 'home'}}" href="{{url_for('Voter', username = username)}}">Home</a></li>
             <li><a class="{{'active' if active_page == 'liveaction'}}" href="{{url_for('LiveAction', username = username)}}">Live Count</a></li>
-            <li><a href="#">{{username}}</a></li>
+            <li><a class="{{'active' if active_page == 'username'}}" href="{{url_for('UserName', username = username)}}">{{username}}</a></li>
             <li><a href="{{url_for('Home')}}">Log Out</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
