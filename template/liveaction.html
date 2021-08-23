@@ -33,7 +33,8 @@
     <tbody>
         {%for data in datas%}
         <tr>
-            <th scope="row">{{data['FirstName'] + ' ' + data['MiddleName'] + ' ' + data['LastName']}}</th>
+            
+            <th scope="row">{{data['FirstName']  + ' ' + data['LastName']}}</th>
             <td>{{data['DegreeLevel']}}</td>
             <td>{{data['PartyID']}}</td>
             <td>
