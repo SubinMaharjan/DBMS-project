@@ -54,14 +54,6 @@ def Display():
 
     return render_template('home.html', datas = result)
 
-# @app.route('/')
-# def Home():
-#     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#     cur.execute("SELECT * FROM address where AddressID = 1")
-#     fetchdata = cur.fetchall()
-#     fetchdata = fetchdata
-#     cur.close()
-#     return render_template('home.html', data = fetchdata)
 
 @app.route('/register', methods=['GET','POST'])
 def Register():
@@ -155,16 +147,6 @@ def Register():
 
     return render_template('register.html', msg = msg)
 
-
-# @app.route('/')
-# @app.route('/home')
-# def Home():
-#     items = [
-#         {"id": 1, "name": "xyz", "age": 14, "address": "kathmandu"},
-#         {"id": 2, "name": "abc", "age": 24, "address": "lalitpur"},
-#         {"id": 3, "name": "pqr", "age": 20, "address": "bhaktapur"}
-#     ]
-#     return render_template('home.html', items = items)
 
 @app.route('/voter/<username>',methods=['GET','POST'])
 def Voter(username):
